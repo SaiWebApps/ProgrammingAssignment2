@@ -44,7 +44,8 @@ cacheSolve <- function(x, ...) {
 	# Otherwise, if "inverse" is NULL, then we haven't cached in x yet.
 	# So, compute the inverse of x's base data matrix, cache it in x,
 	# and then return it.
-	inverse <- solve(x$get())
+	basedata <- x$get()
+	inverse <- solve(basedata)
 	x$setinverse(inverse)
 	inverse
 }
